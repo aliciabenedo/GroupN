@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness Timer</title>
+    <link rel="stylesheet" href="fitness.css">
+   </head>
+    <body>
+    <div class="container">
+    <header>Fitness Timer</header>
+        
+
+        <div class="timer-box">
+           <span id="workoutTimer">00:00:00</span>
+        </div>
+
+
+        <div class="buttons">
+            <button id="startBtn">Start</button>
+            <button id="pauseBtn">Pause</button>
+            <button id="resetBtn">Reset</button>
+            <button id="addTimeBtn">Add Time</button>
+            </div>
+
+       
+        <div class="options">
+            <label for="durationSelect">Select Duration:</label>
+            <select id="durationSelect">
+                <option value="900">15 min</option>
+                <option value="1800">30 min</option>
+                <option value="3600">1 hour</option>
+                <option value="7200">2 hours</option>
+                <option value="custom">Custom</option>
+            </select>
+            
+           
+            <div id="customInputs" style="display:none;">
+                <label for="hours">Hours:</label>
+                <input type="number" id="hours" placeholder="Enter hours" min="0">
+                <label for="minutes">Minutes:</label>
+                <input type="number" id="minutes" placeholder="Enter minutes" min="0">
+                <label for="seconds">Seconds:</label>
+                <input type="number" id="seconds" placeholder="Enter seconds" min="0">
+                </div>
+
+        <button id="setDurationBtn">Set Time</button>
+        </div>
+
+       
+        <button id="historyBtn">Show Workout History</button>
+
+        
+        <div class="history" id="historySection" style="display:none;">
+        <h3>Workout History</h3>
+         <ul id="historyList"></ul>
+    </div>
+    </div>
+
+ <script src="fitness.js"></script>
+</body>
+</html>
