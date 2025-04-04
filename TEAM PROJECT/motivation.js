@@ -1,34 +1,80 @@
-const quotes = [
-    "Believe in yourself and all that you are.",
-    "Your only limit is your mind.",
-    "Every day is a new opportunity to grow and improve.",
-    "Stay positive, work hard, and make it happen.",
-    "Dream big, work hard, stay focused, and surround yourself with good people.",
-    "Success is not final, failure is not fatal: it is the courage to continue that counts.",
-    "Do what you can, with what you have, where you are.",
-    "Don't watch the clock; do what it does. Keep going.",
-    "You are capable of amazing things!",
-    "Great things never come from comfort zones."
-];
-
-function getRandomQuote() {
-    let randomIndex = Math.floor(Math.random() * quotes.length);
-    document.getElementById("quote").textContent = quotes[randomIndex];
-
-    // Save quote to localStorage so it stays the same for the day
-    localStorage.setItem("dailyQuote", quotes[randomIndex]);
-    localStorage.setItem("quoteDate", new Date().toDateString());
-}
-
-// Load stored quote or generate a new one for the day
-document.addEventListener("DOMContentLoaded", function () {
-    let storedQuote = localStorage.getItem("dailyQuote");
-    let storedDate = localStorage.getItem("quoteDate");
-    let todayDate = new Date().toDateString();
-
-    if (storedQuote && storedDate === todayDate) {
-        document.getElementById("quote").textContent = storedQuote;
-    } else {
-        getRandomQuote();
-    }
-});
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(270deg, #6dd5fa, #2980b9);
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+  
+  .container {
+    background-color: rgba(0, 0, 50, 0.5);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 90%;
+    max-width: 600px;
+  }
+  
+  h1 {
+    margin-bottom: 20px;
+  }
+  
+  #quote {
+    font-size: 1.4rem;
+    margin-bottom: 25px;
+    line-height: 1.5;
+    transition: opacity 0.5s ease;
+  }
+  
+  .fade-in {
+    animation: fadeIn 1s;
+  }
+  
+  .button-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  button, .btn {
+    padding: 12px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #3498db;
+    color: #fff;
+  }
+  
+  .btn {
+    background-color: #2ecc71;
+    text-decoration: none;
+    text-align: center;
+    color: white;
+  }
+  
+  .btn:hover {
+    background-color: #27ae60;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  @keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  
