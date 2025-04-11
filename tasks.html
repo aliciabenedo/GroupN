@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Task List - StudyFit</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Task List</h1>
+
+    <div class="toggle-options">
+      <label for="darkModeToggle">Dark Mode:</label>
+      <label class="switch">
+        <input type="checkbox" id="darkModeToggle" />
+        <span class="slider round"></span>
+      </label>
+    </div>
+
+    <div class="task-input">
+      <input type="text" id="taskInput" placeholder="Enter a new task" />
+      <input type="date" id="taskDeadline" />
+      <select id="taskCategory">
+        <option value="study">Study</option>
+        <option value="fitness">Fitness</option>
+        <option value="personal">Personal</option>
+      </select>
+      <button onclick="addTask()">Add Task</button>
+    </div>
+
+    <h2>Pending Tasks</h2>
+    <ul id="taskList"></ul>
+
+    <h2>Completed Tasks</h2>
+    <ul id="completedTasks"></ul>
+
+    <div class="account-actions">
+      <button class="btn" onclick="goBackToDashboard()">Back to Dashboard</button>
+      <button onclick="startVoiceCommands()">Voice Commands</button>
+    </div>
+  </div>
+
+  <audio id="dingSound" src="ding.mp3" preload="auto"></audio>
+
+  <script src="tasks.js"></script>
+  <script src="darkmode-sync.js"></script>
+  <script src="voice.js"></script>
+  <script>
+    function goBackToDashboard() {
+      window.location.href = "dashboard.html";
+    }
+  </script>
+</body>
+</html>
