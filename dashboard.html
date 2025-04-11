@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>StudyFit Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div style="position: absolute; top: 20px; right: 20px;">
+    <button class="btn" onclick="window.location.href='account.html'"> Account</button>
+  </div>
+
+  <div class="container">
+    <h1>StudyFit Dashboard</h1>
+
+    <div class="account-actions">
+      <button id="themeToggle">Dark Mode</button>
+    </div>
+
+    <div class="info-section">
+      <p><strong>Pending Tasks:</strong> <span id="pending-tasks">0</span></p>
+      <p><strong>Completed Tasks:</strong> <span id="completed-tasks">0</span></p>
+      <p><strong>Study Sessions:</strong> <span id="study-sessions">0</span></p>
+      <p><strong>Fitness Sessions:</strong> <span id="fitness-sessions">0</span></p>
+    </div>
+
+    <div class="account-actions">
+      <button onclick="navigateTo('tasks.html')">Task List</button>
+      <button onclick="navigateTo('study.html')">Study Timer</button>
+      <button onclick="navigateTo('fitness.html')"> Fitness Timer</button>
+      <button onclick="navigateTo('motivation.html')"> Daily Motivation</button>
+    </div>
+  </div>
+
+  <p id="live-clock"></p>
+
+  <script>
+    function navigateTo(page) {
+      window.location.href = page;
+    }
+
+    function goBackToDashboard() {
+      window.location.href = "dashboard.html";
+    }
+  </script>
+
+  <script src="dashboard.js"></script>
+  <script src="darkmode-sync.js"></script>
+</body>
+</html>
