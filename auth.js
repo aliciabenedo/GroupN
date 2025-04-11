@@ -46,7 +46,7 @@ function login() {
   }
 
   alert("Login successful!");
-  window.location.href = "account.html";
+  window.location.href = "dashboard.html";
 }
 
 
