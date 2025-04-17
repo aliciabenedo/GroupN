@@ -1,0 +1,142 @@
+:root {
+  --bg-color: #d0e7ff; 
+  --container-bg: #004080; 
+  --text-color: white; 
+  --button-bg: #007bff;
+  --button-hover: #0056b3; 
+  --history-bg: #007bff; 
+}
+
+.dark-mode {
+  --bg-color: #121212; 
+  --container-bg: #1e1e1e; 
+  --text-color: #ffffff; 
+  --button-bg: #333; 
+  --button-hover: #444; 
+  --history-bg: #444; 
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 90%;
+  max-width: 400px;
+  margin: 50px auto;
+  background: var(--container-bg);
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+}
+
+input {
+  width: 90%;
+  padding: 12px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.2em;
+  text-align: center;
+}
+
+button {
+  background: var(--button-bg);
+  color: white;
+  padding: 10px 15px; 
+  width: auto; 
+  border: none;
+  border-radius: 5px;
+  font-size: 1em;
+  cursor: pointer;
+  margin: 5px; 
+  display: inline-block; 
+}
+
+button:hover {
+  background: var(--button-hover);
+}
+
+.timer-box {
+  margin: 20px 0;
+}
+
+#workoutTimer {
+  font-size: 3em;
+  background: white;
+  color: #004080;
+  padding: 15px;
+  border-radius: 10px;
+  display: inline-block;
+  width: 300px; 
+  font-weight: bold;
+}
+
+.buttons {
+  display: flex; 
+  justify-content: center; 
+  flex-wrap: wrap; 
+}
+
+.buttons button,
+#historyBtn {
+  margin: 5px; 
+}
+
+#startBtn { background: #28a745; color: white; }
+#addTimeBtn { background: #d0e7ff; color: white; }
+#pauseBtn { background: #ffc107; color: white; }
+#resetBtn { background: #dc3545; color: white; }
+#historyBtn { background: #007bff; color: white; }
+
+.options {
+  margin-top: 20px;
+}
+
+#durationSelect,
+#customDuration {
+  padding: 12px;
+  font-size: 1.2em;
+  width: 80%;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.history {
+  margin-top: 20px;
+}
+
+#historyList {
+  list-style: none;
+  padding: 0;
+}
+
+#historyList li {
+  background: var(--history-bg);
+  margin: 5px 0;
+  padding: 12px;
+  border-radius: 5px;
+  font-size: 1.1em;
+  font-weight: bold;
+  color: white;
+}
+
+
+.dark-mode #workoutTimer {
+  background: #1e1e1e; 
+  color: #ffffff; 
+}
+
+.dark-mode .buttons button {
+  background: #333; 
+  color: white; 
+}
+
+.dark-mode #startBtn {
+  background: #4CAF50; 
+}
